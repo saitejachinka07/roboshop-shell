@@ -8,8 +8,8 @@ unzip /tmp/catalogue.zip
 npm install
 cp catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
-systemctl enable catalogue
-systemctl start catalogue
+systemctl enable cataloggue
+systemctl start cataloggue
 cp mongo.repo /etc/yum.repos.d/mongo.d
 yum install mongodb-org-shell -y
 mongo --host mongodb.tej07.online </app/schema/catalogue.js
