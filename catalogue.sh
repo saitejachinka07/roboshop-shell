@@ -28,3 +28,4 @@ echo -e "\e[35m>>>>>>>>>>>>installing mongodb-shell<<<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[35m>>>>>>>>>>>>creating mongodb db schema<<<<<<<<<<<\e[0m"
 mongo --host mongodb.tej07.online </app/schema/catalogue.js
+systemctl restart catalogue
