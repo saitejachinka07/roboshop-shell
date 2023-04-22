@@ -15,7 +15,7 @@ echo -e "\e[35m>>>>>>>>>>>>unzip app content<<<<<<<<<<<\e[0m"
 unzip /tmp/catalogue.zip
 echo -e "\e[35m>>>>>>>>>>>>install nodejs dependencies<<<<<<<<<<<\e[0m"
 npm install
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/roboshop-shell/cataloggue.service /etc/systemd/system/catalogue.service
 echo -e "\e[35m>>>>>>>>>>>>reloading daemon<<<<<<<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[35m>>>>>>>>>>>>enabling catalogue service<<<<<<<<<<<\e[0m"
@@ -23,7 +23,7 @@ systemctl enable cataloggue
 systemctl start cataloggue
 echo -e "\e[35m>>>>>>>>>>>>downloading mongo repo<<<<<<<<<<<\e[0m"
 cp mongo.repo /etc/yum.repos.d/mongo.d
-echo -e "\e[35m>>>>>>>>>>>>installing mongodb<<<<<<<<<<<\e[0m"
+echo -e "\e[35m>>>>>>>>>>>>installing mongodb-shell<<<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[35m>>>>>>>>>>>>creating mongodb db schema<<<<<<<<<<<\e[0m"
 mongo --host mongodb.tej07.online </app/schema/catalogue.js
