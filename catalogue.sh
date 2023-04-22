@@ -1,6 +1,6 @@
 echo -e "\e[35m>>>>>>>>>>>>configuring nodejs repo<<<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-echo "\e[35m>>>>>>>>>>>>installing nodejs<<<<<<<<<<<\e[0m"
+echo -e "\e[35m>>>>>>>>>>>>installing nodejs<<<<<<<<<<<\e[0m"
 yum install nodejs -y
 echo -e "\e[35m>>>>>>>>>>>>adding useradd<<<<<<<<<<<\e[0m"
 useradd roboshop
