@@ -16,7 +16,7 @@ unzip /tmp/catalogue.zip
 echo -e "\e[35m>>>>>>>>>>>>install nodejs dependencies<<<<<<<<<<<\e[0m"
 npm install
 echo -e "\e[36m>>>>>>>>>>>> copying catalogue.service file <<<<<<<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/catalogue.service  /etc/systemd/system/catalogue.service
+cp /home/centos/roboshop-shell/catalogue.service1  /etc/systemd/system/catalogue.service
 echo -e "\e[35m>>>>>>>>>>>>reloading daemon<<<<<<<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[35m>>>>>>>>>>>>enabling catalogue service<<<<<<<<<<<\e[0m"
