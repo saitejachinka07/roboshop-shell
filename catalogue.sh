@@ -20,8 +20,8 @@ cp /home/centos/roboshop-shell/catalogue.service1  /etc/systemd/system/catalogue
 echo -e "\e[35m>>>>>>>>>>>>reloading daemon<<<<<<<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[35m>>>>>>>>>>>>enabling catalogue service<<<<<<<<<<<\e[0m"
-systemctl enable cataloggue
-systemctl start cataloggue
+systemctl enable catalogue
+systemctl start catalogue
 echo -e "\e[35m>>>>>>>>>>>>downloading mongo repo<<<<<<<<<<<\e[0m"
 cp mongo.repo   /etc/yum.repos.d/mongo.d
 echo -e "\e[35m>>>>>>>>>>>>installing mongodb-shell<<<<<<<<<<<\e[0m"
