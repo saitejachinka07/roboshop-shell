@@ -37,7 +37,6 @@ echo -e "\e[36m>>>>>>>>>>>> Load mysql schema <<<<<<<<<<<<"
 
 mysql -h mysql.tej07.online -uroot -pRoboShop@1 < /app/schema/shipping.sql 
 
-
 echo -e "\e[36m>>>>>>>>>>>> starting shipping service <<<<<<<<<<<<"
 systemctl daemon-reload
 systemctl enable shipping
