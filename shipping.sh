@@ -25,9 +25,7 @@ mvn clean package
 
 mv target/shipping-1.0.jar shipping.jar 
 
-echo -e "\e[36m>>>>>>>>>>>> Copying shipping service <<<<<<<<<<<<"
 
-cp /home/centos/roboshop-shell/shipping.service  /etc/systemd/system/shipping.service
 
 echo -e "\e[36m>>>>>>>>>>>> installing mysql <<<<<<<<<<<<"
 
@@ -36,6 +34,11 @@ yum install mysql -y
 echo -e "\e[36m>>>>>>>>>>>> Load mysql schema <<<<<<<<<<<<"
 
 mysql -h mysql.tej07.online -uroot -pRoboShop@1 < /app/schema/shipping.sql 
+
+echo -e "\e[36m>>>>>>>>>>>> Copying shipping service <<<<<<<<<<<<"
+
+cp /home/centos/roboshop-shell/shipping.service  /etc/systemd/system/shipping.service
+
 
 echo -e "\e[36m>>>>>>>>>>>> starting shipping service <<<<<<<<<<<<"
 systemctl daemon-reload
