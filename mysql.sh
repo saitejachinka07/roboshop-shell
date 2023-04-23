@@ -10,4 +10,4 @@ echo -e "\e[36m>>>>>>>>> start mysql service <<<<<<<<<<\e[0m"
 systemctl start mysql
 echo -e "\e[36m>>>>>>>>> Reset Mysql password <<<<<<<<<<\e[0m"
 mysql_secure_installation --set-root-pass RoboShop@1
-mysql -uroot -pRoboShop@1
+#mysql -uroot -pRoboShop@1
