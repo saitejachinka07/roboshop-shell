@@ -43,4 +43,4 @@ cp /home/centos/roboshop-shell/shipping.service  /etc/systemd/system/shipping.se
 echo -e "\e[36m>>>>>>>>>>>> starting shipping service <<<<<<<<<<<<"
 systemctl daemon-reload
 systemctl enable shipping
-systemctl start shipping
+systemctl restart shipping
