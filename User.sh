@@ -5,6 +5,8 @@ echo -e "\e[35m>>>>>>>>>>>> installing nodejs <<<<<<<<<<<\e[0m"
 yum install nodejs -y
 echo -e "\e[35m>>>>>>>>>>>> creating roboshop user <<<<<<<<<<<\e[0m"
 useradd roboshop
+echo -e "\e[35m>>>>>>>>>>>> removing /app folder <<<<<<<<<<<\e[0m"
+rm -rf /app
 echo -e "\e[35m>>>>>>>>>>>> creating application folder <<<<<<<<<<<\e[0m"
 mkdir /app
 echo -e "\e[35m>>>>>>>>>>>> downloading app content <<<<<<<<<<<\e[0m"
