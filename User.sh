@@ -1,13 +1,6 @@
 script_path=$(dirname $0)
 source ${script_path}/common.sh
 
-echo $app_user
-
-
-
-
-
-exit
 
 echo -e "\e[36m>>>>>>>>>>>>creating nodejs repo file<<<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
@@ -28,14 +21,14 @@ unzip /tmp/user.zip
 echo -e "\e[35m>>>>>>>>>>>> installing nodejs dependencies <<<<<<<<<<<\e[0m"
 npm install
 echo -e "\e[35m>>>>>>>>>>>> copying service file <<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/user.service  /etc/systemd/system/user.service
+cp ${script_path}/user.service  /etc/systemd/system/user.service
 echo -e "\e[35m>>>>>>>>>>>> realoading daemon <<<<<<<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[35m>>>>>>>>>>>> enable user  <<<<<<<<<<<\e[0m"
 systemctl enable user
 systemctl start user
 echo -e "\e[35m>>>>>>>>>>>>copy mongo.repo file <<<<<<<<<<<\e[0m"
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[35m>>>>>>>>>>>> installing mongodb  <<<<<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[35m>>>>>>>>>>>> creating mongodb schema <<<<<<<<<<<\e[0m"
