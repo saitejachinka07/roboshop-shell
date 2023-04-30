@@ -1,6 +1,8 @@
 script_path=$(dirname $0)
 source ${scripth_path}\common.sh
 
+echo $app_user
+
 
 
 
