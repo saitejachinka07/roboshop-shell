@@ -1,4 +1,5 @@
-source common.sh
+script_path=$(dirname $0)
+source ${script_path}/common.sh
 echo -e "\e[36m>>>>>>>>>>>>  Installing maven   <<<<<<<<<<<< \e[0m"
 
 yum install maven -y
@@ -36,7 +37,7 @@ mv target/shipping-1.0.jar shipping.jar
 
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   mysql repo file     <<<<<<<<<<<<<<<<<<<\e[0m"
 
-cp /home/centos/roboshop-shell/mysql.repo  /etc/yum.repos.d/mysql.repo
+cp ${script_path}/mysql.repo  /etc/yum.repos.d/mysql.repo
 
 
 echo -e "\e[36m>>>>>>>>>>>>  Downloading mysql    <<<<<<<<<<<<<\e[0m"
@@ -52,7 +53,7 @@ mysql -h mysql.tej07.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
 echo -e "\e[36m>>>>>>>>>>>>>>>>>> copying shipping.service file <<<<<<<<<<<<<<<<<<<\e[0m"
 
 
-cp /home/centos/roboshop-shell/shipping.service  /etc/systemd/system/shipping.service
+cp ${script_path}/shipping.service  /etc/systemd/system/shipping.service
 
 
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>  Reloading the system  <<<<<<<<<<<<<<<<\e[0m"
