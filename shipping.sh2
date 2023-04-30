@@ -29,9 +29,7 @@ mvn clean package
 mv target/shipping-1.0.jar shipping.jar 
 
 
-echo -e "\e[36m>>>>>>>>>>>>>>>>>> copying shipping.service file <<<<<<<<<<<<<<<<<<<\e[0m"
 
-cp /home/centos/roboshop-shell/ shipping.service  /etc/systemd/system/shipping.service
 
 
 
@@ -50,10 +48,18 @@ echo -e "\e[36m>>>>>>>>>>>>>>>   Loading  mysql schema      <<<<<<<<<<<<<<<<<<\e
 mysql -h mysql.tej07.online -uroot -pRoboShop@1 < /app/schema/shipping.sql 
 
 
+echo -e "\e[36m>>>>>>>>>>>>>>>>>> copying shipping.service file <<<<<<<<<<<<<<<<<<<\e[0m"
+
+
+cp /home/centos/roboshop-shell/shipping.service  /etc/systemd/system/shipping.service
+
+
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>  Reloading the system  <<<<<<<<<<<<<<<<\e[0m"
 
 
 systemctl daemon-reload 
+echo -e "\e[36m>>>>>>>>>>>>>>>>>>  enabling the system  <<<<<<<<<<<<<<<<\e[0m"
+
 systemctl enable shipping
 systemctl restart shipping
 
