@@ -2,7 +2,7 @@ source common.sh
 
 pwd
 
-dirname
+dirname $0
 
 exit
 
