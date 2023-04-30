@@ -1,5 +1,5 @@
 script_path=$(dirname $0)
-source ${scripth_path}/common.sh
+source ${scripth_path}\common.sh
 
 
 
