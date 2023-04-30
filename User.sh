@@ -2,6 +2,8 @@ source common.sh
 
 pwd
 
+dirname
+
 exit
 
 echo -e "\e[36m>>>>>>>>>>>>creating nodejs repo file<<<<<<<<<<<\e[0m"
