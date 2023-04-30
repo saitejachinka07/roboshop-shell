@@ -1,8 +1,9 @@
-source common.sh
+script_path=$(dirname $0)
+source ${scripth_path}/common.sh
 
-pwd
 
-dirname $0
+
+
 
 exit
 
