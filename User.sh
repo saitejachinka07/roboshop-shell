@@ -1,11 +1,11 @@
-script_path
+source common.sh
 echo -e "\e[36m>>>>>>>>>>>>creating nodejs repo file<<<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 echo -e "\e[35m>>>>>>>>>>>> installing nodejs <<<<<<<<<<<\e[0m"
 yum install nodejs -y
 echo -e "\e[35m>>>>>>>>>>>> creating roboshop user <<<<<<<<<<<\e[0m"
-useradd roboshop
+useradd ${app_user}
 echo -e "\e[35m>>>>>>>>>>>> removing /app folder <<<<<<<<<<<\e[0m"
 rm -rf /app
 echo -e "\e[35m>>>>>>>>>>>> creating application folder <<<<<<<<<<<\e[0m"

@@ -1,8 +1,9 @@
+source common.sh
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   Installing python   <<<<<<<<<<<<<<<<<<\e[0m"
 yum install python36 gcc python3-devel -y
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   creatig roboshop user   <<<<<<<<<<<<<<<<<<\e[0m"
 
-useradd roboshop
+useradd ${app_user}
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   removing /app   <<<<<<<<<<<<<<<<<<\e[0m"
 
 
