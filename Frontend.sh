@@ -4,7 +4,7 @@ source ${script_path}/common.sh
 echo -e "\e[36m>>>>>>>>>>> Installing nginx<<<<<<<<<\e[0m"
 yum install nginx -y
 echo -e "\e[36m>>>>>>>>>>>>>> copying robohsop.conf to etc<<<<<<<<<<<<<"
-cp roboshop.conf /etc/nginx/default.d/roboshop.conf
+cp ${script_path}/roboshop.conf /etc/nginx/default.d/roboshop.conf
 
 echo -e "\e[36m>>>>>>>>> Removing the initial content in nginx server<<<<<<<<<<\e[0m"
 rm -rf /usr/share/nginx/html/*
