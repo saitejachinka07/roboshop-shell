@@ -1,11 +1,11 @@
-script=$(realpath "$0")
-script_path=$(dirname "$script")
+echo script=$(realpath "$0")
+echo script_path=$(dirname "$script")
 
 
 source ${script_path}/common.sh
 
 
-
+exit
 
 echo -e "\e[36m>>>>>>>>>>>>creating nodejs repo file<<<<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
@@ -39,5 +39,3 @@ yum install mongodb-org-shell -y
 echo -e "\e[35m>>>>>>>>>>>> creating mongodb schema <<<<<<<<<<<\e[0m"
 mongo --host mongodb.tej07.online </app/schema/user.js
 systemctl restart user
-
-echo "$0"
