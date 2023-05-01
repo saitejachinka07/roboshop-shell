@@ -11,6 +11,18 @@ echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 }
 
 
+schema_setup(){
+
+    echo -e "\e[35m>>>>>>>>>>>>downloading mongo repo<<<<<<<<<<<\e[0m"
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
+echo -e "\e[35m>>>>>>>>>>>>installing mongodb-shell<<<<<<<<<<<\e[0m"
+yum install mongodb-org-shell -y
+echo -e "\e[35m>>>>>>>>>>>>creating mongodb db schema<<<<<<<<<<<\e[0m"
+mongo --host mongodb.tej07.online </app/schema/catalogue.js
+systemctl restart ${component}
+}
+
+
 func_nodejs() {
   print_head   "creating nodejs repo file"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
