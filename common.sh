@@ -3,31 +3,38 @@ script=$(realpath "$0")
 script_path=$(dirname "$script")
 
 
+print_head(){
+
+echo -e "\e[36m>>>>>>>>>>>>>>>> $* <<<<<<<<<<<\e[0m"
+
+
+}
+
 
 func_nodejs() {
-    echo -e "\e[36m>>>>>>>>>>>>creating nodejs repo file<<<<<<<<<<<\e[0m"
+  print_head   creating nodejs repo file
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-echo -e "\e[35m>>>>>>>>>>>> installing nodejs <<<<<<<<<<<\e[0m"
+  print_head installing nodejs 
 yum install nodejs -y
-echo -e "\e[35m>>>>>>>>>>>> creating roboshop user <<<<<<<<<<<\e[0m"
+  print_head creating roboshop user 
 useradd ${app_user}
-echo -e "\e[35m>>>>>>>>>>>> removing /app folder <<<<<<<<<<<\e[0m"
+ print_head removing /app folder 
 rm -rf /app
-echo -e "\e[35m>>>>>>>>>>>> creating application folder <<<<<<<<<<<\e[0m"
+ print_head creating application folder 
 mkdir /app
-echo -e "\e[35m>>>>>>>>>>>> downloading app content <<<<<<<<<<<\e[0m"
+ print_head downloading app content 
 curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip 
 cd /app 
-echo -e "\e[35m>>>>>>>>>>>> unziping the app content <<<<<<<<<<<\e[0m"
+ print_head unziping the app content 
 unzip /tmp/${component}.zip
-echo -e "\e[35m>>>>>>>>>>>> installing nodejs dependencies <<<<<<<<<<<\e[0m"
+ print_head installing nodejs dependencies 
 npm install
-echo -e "\e[35m>>>>>>>>>>>> copying service file <<<<<<<<<<<\e[0m"
+ print_head copying service file 
 cp ${script_path}/${component}.service  /etc/systemd/system/${component}.service
-echo -e "\e[35m>>>>>>>>>>>> realoading daemon <<<<<<<<<<<\e[0m"
+ print_head realoading daemon 
 systemctl daemon-reload
-echo -e "\e[35m>>>>>>>>>>>> enable user  <<<<<<<<<<<\e[0m"
+ print_head enable user  
 systemctl enable ${component}
 systemctl start ${component}
 }
