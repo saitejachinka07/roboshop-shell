@@ -31,7 +31,7 @@ pip3.6 install -r requirements.txt
 
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   copying payment.service file   <<<<<<<<<<<<<<<<<<\e[0m"
 
-sed -i -e  "s|rabbitmq_appuser_password|${rabbitmq_appuser_password}" ${script_path}/payment.service
+sed -i -e  "s|rabbitmq_appuser_password|${rabbitmq_appuser_password}|" ${script_path}/payment.service
 cp ${script_path}/payment.service /etc/systemd/system/payment.service
 
 #sed -i -e "s|rabbitmq_appuser_password|${rabbitmq_appuser_password}|"  $script_path}/payment.service
