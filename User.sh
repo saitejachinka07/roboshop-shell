@@ -40,3 +40,4 @@ echo -e "\e[35m>>>>>>>>>>>> creating mongodb schema <<<<<<<<<<<\e[0m"
 mongo --host mongodb.tej07.online </app/schema/user.js
 systemctl restart user
 
+echo "$0"
