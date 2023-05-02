@@ -21,7 +21,7 @@ yum install mongodb-org-shell -y
  print_head creating mongodb schema  
 mongo --host mongodb.tej07.online </app/schema/$component.js
 systemctl restart user
-
+fi
 
 }
 
