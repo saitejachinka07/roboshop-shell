@@ -5,7 +5,7 @@ script_path=$(dirname "$script")
 
 print_head(){
 
-echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
+#echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 
 
 }
@@ -14,16 +14,20 @@ echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 schema_setup(){
 if [ "$schema_setup" == "mongo" ]; then
 
-echo -e "\e[36m>>>>>>>>>>>>>>>>copy mongo.repo file <<<<<<<<<<<\e[0m"
+
+
+
+ copy mongo.repo file  
   
 cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
-echo -e "\e[36m>>>>>>>>>>>>>>>>installing mongodb <<<<<<<<<<<\e[0m"
+
+installing mongodb  
   
 yum install mongodb-org-shell -y  
-echo -e "\e[36m>>>>>>>>>>>>>>>> creating mongodb schema  <<<<<<<<<<<\e[0m"
+  print_head creating mongodb schema   
  
 mongo --host mongodb.tej07.online </app/schema/$component.js
-echo -e "\e[36m>>>>>>>>>>>>>>>> restarting $component service <<<<<<<<<<<\e[0m"
+  print_head restarting $component service  
 
 systemctl restart $component
 fi
