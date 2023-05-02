@@ -5,6 +5,12 @@ source ${script_path}/common.sh
 
 mysql_password=$1
 
+if [ -z "$mysql_password" ]
+then
+    echo Input of mysql_password is missing
+    exit
+fi
+
 echo -e "\e[36m>>>>>>>>>>>>  Installing maven   <<<<<<<<<<<< \e[0m"
 
 yum install maven -y
