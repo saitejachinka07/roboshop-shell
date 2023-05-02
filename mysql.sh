@@ -1,6 +1,16 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+ 
+mysql_password=$1
+
+if [ -z "$mysql_password" ]
+then
+    echo Input of mysql_password is missing
+    exit
+fi
+
+
 echo -e "\e[36m>>>>>>>>> disable default mysql version <<<<<<<<<<\e[0m"
 dnf module disable mysql -y 
 echo -e "\e[36m>>>>>>>>> copying mysql repo <<<<<<<<<<\e[0m"
