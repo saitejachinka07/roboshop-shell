@@ -14,12 +14,17 @@ echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 schema_setup(){
 if [ "$schema_setup" == "mongo" ]; then
 
-  print_head copy mongo.repo file  
+echo -e "\e[36m>>>>>>>>>>>>>>>>copy mongo.repo file <<<<<<<<<<<\e[0m"
+  
 cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
- print_head  installing mongodb   
+echo -e "\e[36m>>>>>>>>>>>>>>>>installing mongodb <<<<<<<<<<<\e[0m"
+  
 yum install mongodb-org-shell -y  
- print_head  creating mongodb schema   
+echo -e "\e[36m>>>>>>>>>>>>>>>> creating mongodb schema  <<<<<<<<<<<\e[0m"
+ 
 mongo --host mongodb.tej07.online </app/schema/$component.js
+echo -e "\e[36m>>>>>>>>>>>>>>>> restarting $component service <<<<<<<<<<<\e[0m"
+
 systemctl restart $component
 fi
 
