@@ -17,17 +17,17 @@ if [ "$schema_setup" == "mongo" ]; then
 
 
 
- copy mongo.repo file  
+  print_head "copy mongo.repo file"  
   
 cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 
-installing mongodb  
+    print_head  "installing mongodb"  
   
 yum install mongodb-org-shell -y  
-  print_head creating mongodb schema   
+  print_head "creating mongodb schema"   
  
 mongo --host mongodb.tej07.online </app/schema/$component.js
-  print_head restarting $component service  
+  print_head "restarting $component service"  
 
 systemctl restart $component
 fi
