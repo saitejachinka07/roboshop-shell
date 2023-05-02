@@ -63,6 +63,6 @@ systemctl daemon-reload
  print_head "enable user"  
 systemctl enable ${component}
 systemctl start ${component}
-
+print_head "schema_setup"
 schema_setup
 }
