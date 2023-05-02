@@ -20,7 +20,7 @@ cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 yum install mongodb-org-shell -y  
   creating mongodb schema   
 mongo --host mongodb.tej07.online </app/schema/$component.js
-systemctl restart user
+systemctl restart $component
 fi
 
 }
