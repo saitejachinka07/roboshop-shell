@@ -12,15 +12,20 @@ echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 
 
 schema_setup(){
+if [ "$schema_setup" == "mongo" ]; then
 
-    echo -e "\e[35m>>>>>>>>>>>>downloading mongo repo<<<<<<<<<<<\e[0m"
+ print_head copy mongo.repo file 
 cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
-echo -e "\e[35m>>>>>>>>>>>>installing mongodb-shell<<<<<<<<<<<\e[0m"
+ print_head installing mongodb   
 yum install mongodb-org-shell -y
-echo -e "\e[35m>>>>>>>>>>>>creating mongodb db schema<<<<<<<<<<<\e[0m"
-mongo --host mongodb.tej07.online </app/schema/catalogue.js
-systemctl restart ${component}
+ print_head creating mongodb schema  
+mongo --host mongodb.tej07.online </app/schema/$component.js
+systemctl restart user
+
+
 }
+
+ 
 
 
 func_nodejs() {
@@ -49,4 +54,6 @@ systemctl daemon-reload
  print_head "enable user"  
 systemctl enable ${component}
 systemctl start ${component}
+
+schema_setup
 }
