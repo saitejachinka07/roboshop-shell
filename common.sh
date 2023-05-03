@@ -124,5 +124,4 @@ mv target/${component}-1.0.jar ${component}.jar
 func_schema_setup
 
 func_systemd_setup
-
 }
