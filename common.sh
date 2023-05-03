@@ -118,7 +118,7 @@ func_java(){
 
   #func_print_head  "Downloading the java dependencies"
   cd /app 
-  func_print_head  "Downloading the java dependencies"
+  func_print_head " Downloading the java dependencies "
   mvn clean package 
   mv target/${component}-1.0.jar ${component}.jar
 
