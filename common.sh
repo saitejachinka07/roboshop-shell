@@ -104,8 +104,6 @@ func_print_head "schema_setup"
 func_schema_setup
 }
 
-
-
 func_java(){
 
   func_print_head Installing maven
@@ -122,4 +120,6 @@ func_java(){
   func_schema_setup
 
   func_systemd_setup
+
+  
  }
