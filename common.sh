@@ -88,7 +88,7 @@ systemctl restart ${component}
 
 
 
-func_nodejs() {
+func_nodejs(){
   func_print_head   "creating nodejs repo file"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
@@ -116,7 +116,7 @@ yum install maven -y
 
 func_app_prereq
 
-func_print_head "Downloading the java dependencies"
+func_print_head  "Downloading the java dependencies"
 cd /app 
 mvn clean package 
 mv target/${component}-1.0.jar ${component}.jar
