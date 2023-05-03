@@ -5,7 +5,7 @@ script_path=$(dirname "$script")
 
 func_print_head(){
 
-1echo -e "\e[35m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
+echo -e "\e[35m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 
 
 }
@@ -111,7 +111,7 @@ func_schema_setup
 
 func_java(){
 
-  func_print_head "Installing maven"
+  func_print_head Installing maven
   yum install maven -y
 
   func_app_prereq
