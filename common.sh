@@ -111,17 +111,18 @@ func_schema_setup
 
 func_java(){
 
-func_print_head "Installing maven"
-yum install maven -y
+  func_print_head "Installing maven"
+  yum install maven -y
 
-func_app_prereq
+  func_app_prereq
 
-func_print_head  "Downloading the java dependencies"
-cd /app 
-mvn clean package 
-mv target/${component}-1.0.jar ${component}.jar
+  #func_print_head  "Downloading the java dependencies"
+  cd /app 
+  func_print_head  "Downloading the java dependencies"
+  mvn clean package 
+  mv target/${component}-1.0.jar ${component}.jar
 
-func_schema_setup
+  func_schema_setup
 
-func_systemd_setup
-}
+  func_systemd_setup
+ }
