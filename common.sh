@@ -5,7 +5,7 @@ script_path=$(dirname "$script")
 
 func_print_head(){
 
-echo -e "\e[35m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>>>>>>>>> $1 <<<<<<<<<<<\e[0m"
 
 
 }
@@ -69,8 +69,6 @@ unzip /tmp/${component}.zip
 }
 
 
-
-
 func_systemd_setup(){
 func_print_head "copying ${component}.service file"
 cp ${script_path}/${component}.service  /etc/systemd/system/${component}.service
@@ -82,12 +80,11 @@ func_print_head "Enabling the ${component} "
 systemctl enable ${component}"
 
 func_print_head "restarting ${component}"
-systemctl restart ${component}
+systemctl restart ${component} 
 }
+
+
  
-
-
-
 func_nodejs(){
   func_print_head   "creating nodejs repo file"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
