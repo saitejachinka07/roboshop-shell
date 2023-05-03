@@ -116,7 +116,7 @@ func_java(){
 
   func_app_prereq
 
-  #func_print_head  "Downloading the java dependencies"
+
   cd /app 
   func_print_head Downloading the java dependencies 
   mvn clean package 
